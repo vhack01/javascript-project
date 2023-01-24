@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+    width: 100%;
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+/* container */
+.container {
+    background-color: #222;
+    border-radius: 4px;
+    padding: 2rem 4rem;
+    color: #fff;
+    box-shadow: 0 0 10px #000;
+    text-align: center;
+}
+
+.score-board {
+    display: flex;
+    justify-content: space-between;
+}
+
+#play-board.grid {
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.grid-box {
+    height: 12rem;
+    width: 12rem;
+    background-color: rgb(187, 186, 186);
+    border-radius: 3px;
+    overflow: hidden;
+}

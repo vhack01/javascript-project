@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: coral;
+}
+
+/* Typography */
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+/* images */
+img {
+    width: 100%;
+}
+
+/* container */
+.container {
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 2rem 4rem;
+}
+
+.container__heading {
+    text-align: center;
+    font-family: monospace, sans-serif;
+}
+
+.grid {
+    display: grid;
+    grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+    gap: 1rem 1rem;
+}
+
+.board {
+
+    margin-top: 4rem;
+}
+
+.board__image {
+    cursor: pointer;
+    transition: transform 0.4s;
+}
+
+.img--rotate {
+    transform: rotateY(170deg);
+}
