@@ -7,11 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>V-cart</title>
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Michroma&family=Montserrat:wght@300;400;600&family=Rubik:wght@300&display=swap"
-        rel="stylesheet">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;600;700&display=swap" rel="stylesheet">
@@ -20,7 +16,11 @@
 
 <body>
 
-
+    <section class="total-bill">
+        <h4 class="total-bill__header">Total Bill: <span id="total-bill">$ 1405</span></h4>
+        <button type="submit" class="btn btn btn--checkout">Checkout</button>
+        <button type="submit" class="btn btn btn--clearCart">Clear Cart</button>
+    </section>
 
     <script src="./main.js"></script>
 </body>
