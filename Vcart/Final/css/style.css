@@ -129,14 +129,23 @@ h4 {
     padding: 1rem 2rem;
     font-size: 1.5rem;
     cursor: pointer;
+    font-weight: 600;
 }
 
 .btn--checkout {
     background-color: #09bf64;
     color: #fff;
-    font-weight: 600;
 }
 
 .btn--checkout:hover {
     background-color: #18a65f;
+}
+
+.btn--clearCart {
+    background-color: #fa5b12;
+    color: #fff;
+}
+
+.btn--clearCart:hover {
+    background-color: #e54e09;
 }
