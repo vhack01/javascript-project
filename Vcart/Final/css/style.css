@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    /* 62.5% x 16px = 10px */
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+}
+
+
+/* Typography */
+h1 {
+    font-size: 6rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+h4 {
+    font-size: 2rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+}
+
+/* icons */
+.icon-container {
+    background-color: rgb(199, 199, 199);
+    height: 5rem;
+    width: 5rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: #fff;
+}
+
+.icon-container:hover {
+    cursor: pointer;
+    background-color: rgb(159, 158, 158);
+}
+
+.icon--round {
+    border-radius: 100%;
+}
+
+.icon--image {
+    height: 3rem;
+    width: 3rem;
+}
+
+.cart-counter {
+    height: 2rem;
+    width: 2rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: #09bf64;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    padding: 0.3rem 0.4rem;
+    position: absolute;
+    right: -0.5rem;
+    top: -0.5rem;
+}
+
+/* navigation bar */
+.nav-container {
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    color: #fff;
+}
+
+.brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand__name {
+    text-transform: uppercase;
+    font-family: Comfortaa, Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+
+
+/* counter button */
+.counter {}
+
+.counter__item {
+    border: 1px solid rgb(191, 190, 190);
+    font-weight: bold;
+    padding: 0 0.5rem;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.counter__item-quantity {
+    border: 0;
+}
+
+.counter__item:hover {
+    border-color: rgb(115, 115, 115);
+}
+
+
+/* Button */
+.btn {
+    border: 0;
+    border-radius: 4px;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.btn--checkout {
+    background-color: #09bf64;
+    color: #fff;
+    font-weight: 600;
+}
+
+.btn--checkout:hover {
+    background-color: #18a65f;
+}
