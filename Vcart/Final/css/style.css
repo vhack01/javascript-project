@@ -1,5 +1,5 @@
 :root {
-    --color-heading: #222;
+    --color-heading: rgb(39, 38, 38);
     --color-text: #444;
 }
 
@@ -13,8 +13,8 @@ html {
 }
 
 body {
-    margin: 5rem;
-    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
     font-size: 2rem;
 }
 
@@ -43,6 +43,10 @@ h4 {
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* Generic Class */
 .display--flex {
     display: flex;
@@ -58,9 +62,13 @@ h4 {
 }
 
 .container-area {
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
-    /* border: 1px solid; */
+    padding: 6rem 4rem;
+}
+
+.cart-area {
+    max-width: 700px;
 }
 
 /* icons */
@@ -89,7 +97,7 @@ h4 {
     width: 3rem;
 }
 
-.cart-counter {
+.cart-size {
     height: 2rem;
     width: 2rem;
     display: inline-flex;
@@ -114,21 +122,24 @@ h4 {
     color: #fff;
 }
 
-.brand {
+.brand>a {
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .brand__name {
     text-transform: uppercase;
-    font-family: Comfortaa, Arial, Helvetica, sans-serif;
-    font-weight: 700;
+    font-weight: 600;
+    color: #fff;
 }
 
 
 /* counter button */
-.counter {}
+.counter {
+    /* border: 1px solid; */
+}
 
 .counter__item {
     border: 1px solid rgb(191, 190, 190);
@@ -136,6 +147,7 @@ h4 {
     padding: 0 0.5rem;
     cursor: pointer;
     border-radius: 2px;
+    color: var(--color-heading);
 }
 
 .counter__item-quantity {
@@ -169,6 +181,7 @@ h4 {
 .btn--clearCart {
     background-color: #fa5b12;
     color: #fff;
+    margin-left: 1rem;
 }
 
 .btn--clearCart:hover {
@@ -182,8 +195,14 @@ h4 {
     gap: 4rem 3rem;
 }
 
-.card-container img {
+.card-container {
+    /* margin-top: 4rem; */
+}
+
+.card__header img {
+    height: 20rem;
     width: 100%;
+    object-fit: cover;
 }
 
 .card {
@@ -192,21 +211,29 @@ h4 {
     overflow: hidden;
 }
 
-.card__body {
+.card--vertical .card__body {
     text-align: center;
+}
+
+.card__body {
     padding: 0 2rem 1rem;
 }
 
 .card__title {
     text-transform: capitalize;
     color: var(--color-heading);
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 .card__description {
     margin-top: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: var(--color-text);
+}
+
+.item-price {
+    color: var(--color-heading);
+    font-size: 1.6rem;
 }
 
 @media screen and (min-width : 1024px) {
@@ -221,4 +248,65 @@ h4 {
     }
 }
 
+/* Horizotal card */
+.cart-area.grid {
+    gap: 1rem 3rem;
+}
+
+.card--horizontal {
+    display: flex;
+    position: relative;
+}
+
+.card--horizontal .card__header img {
+    height: 15rem;
+}
+
+.card__close {
+    position: absolute;
+    width: 2rem;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+}
+
+.card__close:hover {
+    background-color: #ddd;
+    border-radius: 100%;
+}
+
+.card--horizontal .card__title {
+    text-align: left;
+}
+
+.title-bar {
+    margin: 1rem 0;
+    display: flex;
+}
+
+.price-tag {
+    background: #444;
+    color: #fff;
+    border-radius: 4px;
+    padding: 0.1rem 1rem;
+    font-size: 1.5rem;
+    margin-left: 2rem;
+}
+
+.card--horizontal .counter {
+    text-align: left;
+    margin-top: 2rem;
+}
+
+.item__total-cost {
+    margin-top: 2rem;
+}
+
+
 /* Total Bill */
+.total-bill__header {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.btn--cart {}
