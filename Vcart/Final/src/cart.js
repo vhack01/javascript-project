@@ -4,11 +4,10 @@ let basket = JSON.parse(localStorage.getItem('data')) || [];
 
 let generatorCartItem = () => {
     if (basket.length !== 0) {
-        cartContainer.innerHTML = basket.map(obj => {
-            // console.log(obj);
+        return cartContainer.innerHTML = basket.map(obj => {
             let cartItem = shopItemsData.find(val => val.id === obj.id);
             return `<div class="card card--horizontal" id=product-id-${cartItem.id}>
-            <img src="./images/close.svg" alt="" srcset="" class="card__close">
+            <img src="./images/close.svg" alt="" srcset="" class="card__close" onclick=removeItem(${cartItem.id})>
             <div class="card__header">
                 <img src=${cartItem.img} alt="" srcset="">
             </div>
@@ -26,14 +25,21 @@ let generatorCartItem = () => {
                 <h4 class="item__total-cost">$${obj.item * cartItem.price}</h4>
             </div>
         </div>`;
-        });
+        }).join('');
+
     }
     else {
-
+        cartContainer.innerHTML = ``;
+        totalBill.innerHTML = `
+        <h4 class="total-bill__header">Cart is Empty</h4>
+        <div class="btn--cart display--flex flex--center">
+            <a href="./index.html" target="_self"><button type="submit" class="btn btn--checkout">Back to
+                    Home</button></a>
+        </div>
+        `;
     }
 };
 generatorCartItem();
-
 let increment = (id) => {
 
     let search = basket.find((val) => val.id === id);
@@ -47,6 +53,7 @@ let increment = (id) => {
         search.item += 1;
     }
     update(id);
+    generatorCartItem();
     localStorage.setItem('data', JSON.stringify(basket));
 };
 let decrement = (id) => {
@@ -58,8 +65,8 @@ let decrement = (id) => {
 
         update(id);
         basket = basket.filter(obj => obj.item !== 0);
+        generatorCartItem();
         localStorage.setItem('data', JSON.stringify(basket));
-        // generatorCartItem();
     }
 };
 let update = (id) => {
@@ -70,6 +77,7 @@ let update = (id) => {
         card.innerText = search.item;
 
     basketSize();
+    totalAmount();
 };
 
 let basketSize = () => {
@@ -85,6 +93,41 @@ let basketSize = () => {
 
 basketSize();
 
-function calculateCartTotal() {
+let removeItem = (id) => {
+    console.log(id);
+    basket = basket.filter((obj) => obj.id !== id);
+    totalAmount();
+    basketSize()
+    generatorCartItem();
+    localStorage.setItem('data', JSON.stringify(basket));
+};
 
+
+let totalAmount = () => {
+    if (basket.length > 0) {
+        let sum = basket
+            .map(obj => {
+                return obj.item * shopItemsData.find(val => val.id === obj.id).price
+            }).reduce((prev, curr) => prev + curr);
+        totalBill.innerHTML = `
+            <h4 class="total-bill__header">Total Bill: $<span id="total-bill">${sum}</span></h4>
+            <div class="btn--cart display--flex flex--center">
+                <a href="./index.html" target="_self"><button type="submit" class="btn btn--checkout">Checkout</button></a>
+                <a href="#" target="_self"><button type="submit" class="btn btn--clearCart" onclick=clearCart()>Clear
+                        cart</button></a>
+            </div>
+            `;
+    }
+    else {
+
+    }
+};
+
+totalAmount();
+
+let clearCart = () => {
+    basket = [];
+    localStorage.removeItem('data');
+    basketSize();
+    generatorCartItem();
 }

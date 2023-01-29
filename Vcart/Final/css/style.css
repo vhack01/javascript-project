@@ -304,6 +304,10 @@ a {
 
 
 /* Total Bill */
+.total-bill {
+    margin-top: 4rem;
+}
+
 .total-bill__header {
     margin: 1rem 0;
     text-align: center;
